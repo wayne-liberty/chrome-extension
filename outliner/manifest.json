@@ -1,0 +1,33 @@
+{
+    "manifest_version": 2,
+
+    "name": "outline element",
+    "description": "This extension is meant for web designer to outline certain element, for ease of develepment",
+    "version": "1.0",
+
+    "browser_action": {
+        "default_icon": "icon.png",
+        "default_popup": "popup.html"
+    },
+
+    "background": {
+        "scripts": ["eventPage.js"],
+        "persistent": false
+    },
+
+    "content_scripts":[
+      {
+        "matches":["http://gespiton.cn/*"],
+        "js":["jquery.js","outliner.js"],
+        "css":["outliner.css"]
+      }
+    ],
+
+    "permissions": [
+        "activeTab",
+        "https://ajax.googleapis.com/",
+        "storage",
+        "notifications",
+        "http://gespiton.cn/*"
+    ]
+}
